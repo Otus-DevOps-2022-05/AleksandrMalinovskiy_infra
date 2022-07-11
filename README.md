@@ -1,4 +1,7 @@
 # AleksandrMalinovskiy_infra
+testapp_IP = 51.250.10.185 \
+testapp_port = 9292 \
+
 bastion_IP = 51.250.93.181\
 someinternalhost_IP = 10.128.0.4\
 AleksandrMalinovskiy Infra repository\ 
