@@ -13,10 +13,6 @@ ________________
   "service_account_key_file": "key.json", \
   "folder_id": "qwqeqeqwr", \
   "source_image_family": "weqeqweq" \
-  "id_folder": "zero",\
-  "image": "ubuntu-2004-lts", \
-  "key_file": "Packer/key.json", \
-  "ssh_user": "ubuntu" \
 Дополнительное задание \
 Исследуйте и другие опции билдера выборочно параметризируйте их. \
 В файл ubuntu16.json добавлено: \
