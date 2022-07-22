@@ -1,13 +1,12 @@
-provider "yandex" {
-  service_account_key_file = var.service_account_key_file
-  cloud_id                 = var.cloud_id
-  folder_id                = var.folder_id
-  zone                     = var.zone
+terraform {
+  required_providers {
+    yandex = {
+      source = "yandex-cloud/yandex"
+    }
+  }
 }
 
-resource "yandex_storage_bucket" "terraform" {
-  access_key    = var.s3_access_key
-  secret_key    = var.s3_secret_key
+resource "yandex_storage_bucket" "otus-terra" {
   bucket        = var.bucket_name
-  force_destroy = true
+  force_destroy = "true"
 }
