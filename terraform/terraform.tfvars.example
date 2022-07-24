@@ -9,6 +9,6 @@ private_key              = "~/.ssh/id_rsa"
 app_disk_image           = "fd8u6ickqvmslitpa3kh"
 db_disk_image            = "fd8n6rnikn6t5ea43bu9"
 
-s3_access_key            = "access_key"
-s3_secret_key            = "secret_key"
+s3_access_key            = "ajebr6iprdrfu17m6sf4"
+s3_secret_key            = "aje787gflffdkqfsg2q4"
 bucket_name              = "terraform-backet"
