@@ -1,12 +1,6 @@
 - name: Clone
   hosts: app
   tasks:
-    - name: Install git package
-      ansible.builtin.package:
-        name: git
-        state: present
-      become: yes
-
     - name: Clone repo
       git:
         repo: https://github.com/express42/reddit.git
