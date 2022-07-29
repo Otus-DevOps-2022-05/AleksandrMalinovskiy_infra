@@ -5,6 +5,18 @@ testapp_port = 9292
 bastion_IP = 51.250.93.181\
 someinternalhost_IP = 10.128.0.4\
 AleksandrMalinovskiy Infra repository
+Домашнее задание по Ansible-2\
+Выполните ansible app -m command -a 'rm -rf ~/reddit' и проверьте еще раз выполнение плейбука. Что изменилось и почему?\
+ansible app -m command -a 'rm -rf ~/reddit' удалит папку reddit с сервера app\
+ansible-playbook clone.yml снова сделает клонирование репозитория\
+Задание со *\
+Файл inventory.yml из YAML перевел в JSON (inventory.json).\
+При команде ansible -i ./inventory.json all -m ping все проходит успешно.\
+Динамическое инвентори представляет собой простой исполняемый скрипт (+x), который при запуске с параметром --list возвращает список хостов в формате JSON.\
+Источник данных для динамического инвентори будет предоставлен в виде файла istok.json\
+Скрипт который отдаст даные script.sh\
+При выполнении ansible-playbook clone.yml и ansible all -m ping все ок\
+
 ____________
 Домашнее задание по Terraform -2\
 Задание
