@@ -18,6 +18,7 @@
     "provisioners": [
         {
             "type": "ansible",
+            "user": "ubuntu",
             "playbook_file": "/home/alex/myDoc/AleksandrMalinovskiy_infra/ansible/packer_app.yml"
         }
     ]
