@@ -2,7 +2,7 @@ resource "yandex_compute_instance" "db" {
   name = "reddit-db"
 
   labels = {
-    tags = "reddit-db"
+    tags = "db"
   }
 
   resources {
