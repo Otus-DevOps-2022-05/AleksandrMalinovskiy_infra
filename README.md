@@ -5,6 +5,70 @@ testapp_port = 9292
 bastion_IP = 51.250.93.181\
 someinternalhost_IP = 10.128.0.4\
 AleksandrMalinovskiy Infra repository
+_________________
+Домашнее задание по Ansible-3\
+Выполнено все согласно методичке.\
+В итоге получаем prod и stage\
+Так же мы получили весь конфигурационный код более сгруппированный так разбили все на роли.\
+Самостоятельно\
+Добавьте в конфигурацию Terraform открытие 80 порта для инстанса приложения\
+Добавьте вызов роли jdauphant.nginx в плейбук app.yml\
+Примените плейбук site.yml для окружения stage и проверьте,что приложение теперь доступно на 80 порту\
+Результат\
+После применения плэйбука site.yml можно пройти по ip app и попасть сразу на приложение. Значит nginx настроен на 80 порт.\
+Задание со *
+В прошлом ДЗ было задание со * про работу с динамическим инвентори.\
+Настройте использование динамического инвентори для окружений stage и prod.\
+В коде Ansible это должно быть закомичено\
+Результат\
+Копировал yc_compute.yml в папку ansible/environments/prod/ и ansible/environments/stage/ \
+Настроил ansible.conf на динамический инвентори. \
+[defaults]
+inventory = ./environments/stage/yc_compute.yml
+----
+[inventory]
+enable_plugins = yc_compute
+При выполнении команды ansible-inventory --list выдает \
+{
+    "_meta": {
+        "hostvars": {
+            "reddit-app": {
+                "ansible_host": "62.84.114.154",
+                "db_host": "51.250.14.173",
+                "env": "stage",
+                "nginx_sites": {
+                    "default": [
+                        "listen 80",
+                        "server_name \"reddit\"",
+                        "location / { proxy_pass http://127.0.0.1:9292; }"
+                    ]
+                }
+            },
+            "reddit-db": {
+                "ansible_host": "51.250.14.173",
+                "env": "stage",
+                "mongo_bind_ip": "0.0.0.0"
+            }
+        }
+    },
+    "all": {
+        "children": [
+            "app",
+            "db",
+            "ungrouped"
+        ]
+    },
+    "app": {
+        "hosts": [
+            "reddit-app"
+        ]
+    },
+    "db": {
+        "hosts": [
+            "reddit-db"
+        ]
+    }
+}
 ____________
 Домашнее задание по Ansible-2\
 Выполнено все согласно методичке.\
