@@ -1,5 +1,5 @@
 - name: Настройка app
-  hosts: app
+  hosts: all
   become: true
 
   roles:

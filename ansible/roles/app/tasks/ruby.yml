@@ -1,0 +1,30 @@
+---
+- name: Install transport https
+  apt:
+    name: apt-transport-https
+    state: present
+  tags: ruby
+
+- name: Install 'ca-certificates'
+  apt:
+    name: ca-certificates
+    state: present
+  tags: ruby
+
+- name: Install ruby-full
+  apt:
+    name: ruby-full
+    state: present
+  tags: ruby
+
+- name: Install ruby-bundler
+  apt:
+    name: ruby-bundler
+    state: present
+  tags: ruby
+
+- name: Install build-essential
+  apt:
+    name: build-essential
+    state: present
+  tags: ruby
