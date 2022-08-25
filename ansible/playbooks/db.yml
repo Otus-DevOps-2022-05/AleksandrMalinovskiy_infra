@@ -1,5 +1,5 @@
 - name: Настройка mongodb
-  hosts: db
+  hosts: all
   become: true
 
   roles:
