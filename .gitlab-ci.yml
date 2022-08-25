@@ -10,6 +10,7 @@ variables:
 
 before_script:
   - cd reddit
+  - apt-get install ruby-all-dev
   - bundle install
 
 build_job:
