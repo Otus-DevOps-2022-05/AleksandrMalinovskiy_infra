@@ -4,13 +4,14 @@ stages:
   - build
   - test
   - review
+  - stage
+  - production
 
 variables:
   DATABASE_URL: 'mongodb://mongo/user_posts'
 
 before_script:
   - cd reddit
-#  - apt-get install ruby1.9.1-dev
   - bundle install
 
 build_job:
@@ -35,5 +36,23 @@ deploy_dev_job:
   script:
     - echo 'Deploy'
   environment:
-     name: dev
-     url: http://dev.example.com
+    name: dev
+    url: http://dev.example.com
+
+staging:
+  stage: stage
+  when: manual
+  script:
+    - echo 'Deploy'
+  environment:
+    name: beta
+    url: http://beta.example.com
+
+production:
+  stage: production
+  when: manual
+  script:
+    - echo 'Deploy'
+  environment:
+    name: production
+    url: http://example.com
