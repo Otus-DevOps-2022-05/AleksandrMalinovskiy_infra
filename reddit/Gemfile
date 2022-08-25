@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'ruby_dev'
 gem 'sinatra', '~> 2.0.1'
 gem 'haml'
 gem 'ruby_dev'
